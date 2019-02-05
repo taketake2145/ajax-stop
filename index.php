@@ -11,7 +11,7 @@
 <body>
 <a class="js-start">START</a>
 <a class="js-stop">STOP</a>
-<a href="">GitHub</a>
+<a href="https://github.com/taketake2145/ajax-stop">GitHub</a>
   
 <h1>結論</h1>  
 <p>Ajax通信を中断することはできたけど、サーバーサイドの処理は止まらなかった。</p>
@@ -30,35 +30,6 @@
 <p>フロント側でAjax通信を中断したら、サーバーサイドの処理も中断させる方法</p>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script>
-$(function(){
-  var xhr;
-  
-  $(".js-start").on("click", function(){
-    if (xhr) xhr.abort();
-    xhr = $.ajax({
-      type: 'GET',
-      url: 'ajax.php',
-      dataType: 'text',
-      timeout: 10000
-    })
-    .done(function(d){
-      console.log(d);
-    })
-    .fail(function(){
-      console.log("fail");
-    })
-    .always(function(){
-      console.log("always");
-    });
-    return false;
-  });
-
-  $(".js-stop").on("click", function(){
-     if (xhr) xhr.abort();
-    return false;
-  });  
-});
-</script>
+<script src="test.js"></script>
 </body>
 </html>
